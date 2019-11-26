@@ -1,0 +1,8 @@
+on: '2'
+
+
+services:
+  mycomposeapache:
+    build: . 
+    ports:
+      - '8888:8080'
