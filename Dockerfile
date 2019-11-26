@@ -1,11 +1,17 @@
-FROM java:8
+# Base Image
+FROM openjdk:8
 
 MAINTAINER Alok Verma <alok.verma@mindtree.com>
 
-ADD /target/todo-management-0.0.1-SNAPSHOT.jar todo-management-0.0.1-SNAPSHOT.jar
+# Create DIR
+RUN mkdir -p /usr/src/myapp
+# COPY APPLICTAION COde
+COPY /target/todo-management-0.0.1-SNAPSHOT.jar /usr/src/myapp
 
-EXPOSE 8081
+# Setup Working DIR
+WORKDIR /usr/src/myapp
 
+# Start the Bot Service
 CMD ["java", "-jar", "todo-management-0.0.1-SNAPSHOT.jar"]
 
 
