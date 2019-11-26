@@ -2,7 +2,7 @@ on: '2'
 
 
 services:
-  mycomposeapache:
+  todo-mycompose:
     build: . 
     ports:
       - '8888:8080'
