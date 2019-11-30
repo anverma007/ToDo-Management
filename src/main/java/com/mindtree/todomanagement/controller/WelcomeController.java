@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class WelcomeController {
 
-	 @RequestMapping(method = RequestMethod.GET)
+	 @RequestMapping(value = "/" ,method = RequestMethod.GET)
 	    public String showWelcomePage(ModelMap model) {
 	        model.put("name", getLoggedinUserName());
-	        System.out.println("-----------------"+model+"-------------------");
-	        return "welcome";
+	        return "redirect:/list-todos";
 	    }
 
 	    private String getLoggedinUserName() {
@@ -20,10 +19,8 @@ public class WelcomeController {
 	            .getAuthentication().getPrincipal();
 
 	        if (principal instanceof UserDetails) {
-	        	System.out.println("------------------------------------");
 	            return ((UserDetails) principal).getUsername();
 	        }
-	        System.out.println("------------------"+principal.toString()+"------------------");
 	        return principal.toString();
 	    }
 

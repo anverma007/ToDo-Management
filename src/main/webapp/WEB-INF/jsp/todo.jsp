@@ -23,6 +23,7 @@
 						</fieldset>
 
 						<button type="submit" class="btn btn-success">Save</button>
+						<button type="button" class="btn btn-default" name="back" onclick="history.back()">Cancel</button>
 					</form:form>
 				</div>
 			</div>
