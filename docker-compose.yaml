@@ -1,0 +1,8 @@
+version: '2'
+
+
+services:
+  todo-mycompose:
+    build: . 
+    ports:
+      - '8888:8080'
