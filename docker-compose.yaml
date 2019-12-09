@@ -3,6 +3,7 @@ version: '2'
 
 services:
   todo-manage:
+    build: .
     ports:
       - '8888:8888'
     networks:
