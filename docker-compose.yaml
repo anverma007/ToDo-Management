@@ -2,7 +2,22 @@ version: '2'
 
 
 services:
-  todo-mycompose:
-    build: . 
+  todo-manage:
+    image: todo-manage
     ports:
-      - '8888:8080'
+      - '8888:8888'
+    networks:
+      - todo-manage-mysql
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - todo-manage-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=todo_management
+
+networks:
+  todo-manage-mysql:
