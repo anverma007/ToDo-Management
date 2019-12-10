@@ -3,21 +3,21 @@ version: '2'
 
 services:
   todo-manage:
-    image: todo-manage
+    image: todo-manage007
     ports:
       - '8888:8888'
     networks:
-      - todo-manage-mysql
+      - todo-mysql
     depends_on:
       - mysqldb
 
   mysqldb:
     image: mysql:8
     networks:
-      - todo-manage-mysql
+      - todo-mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=todo_management
 
 networks:
-  todo-manage-mysql:
+  todo-mysql:
