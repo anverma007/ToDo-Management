@@ -3,7 +3,7 @@ version: '2'
 
 services:
   todo-manage:
-    image: todo-manage
+    image: anverma007/todo-manage
     ports:
       - '8888:8888'
     networks:
