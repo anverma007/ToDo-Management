@@ -1,7 +1,7 @@
 # Base Image
 FROM openjdk:8
 
-MAINTAINER Alok Verma <alok.verma@mindtree.com>
+MAINTAINER Alok Verma <aloknarayan52@gmail.com>
 
 # Create DIR
 RUN mkdir -p /usr/src/myapp
